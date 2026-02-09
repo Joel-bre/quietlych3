@@ -15,8 +15,9 @@ jobs:
       run: |
         npm install
         npm run build
-        # Verify the build output
-        ls -R dist
+        # 🔧 FIX: Move files out of the subfolder manually so upload is simple
+        mv dist/public/* dist/ || true
+        rm -rf dist/public
 
     - name: 📂 Sync files to Swizzonic
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -25,4 +26,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ./
-        local-dir: ./dist/public/
+        local-dir: ./dist/

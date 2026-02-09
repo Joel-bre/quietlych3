@@ -1,15 +1,20 @@
-name: 🚀 Deploy Website
+name: 🚀 Build and Deploy Website
 on:
   push:
     branches:
       - main
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  build-and-deploy:
+    name: 🎉 Build & Sync
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
+    
+    - name: 🏗️ Install and Build
+      run: |
+        npm install
+        npm run build
     
     - name: 📂 Sync files to Swizzonic
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -18,4 +23,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /
-        local-dir: ./public/
+        local-dir: ./dist/

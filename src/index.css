@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark Purple Journal Design System */
+
+@layer base {
+  :root {
+    /* Light mode - soft purple tones */
+    --background: 250 20% 95%;
+    --foreground: 250 30% 15%;
+
+    --card: 250 25% 98%;
+    --card-foreground: 250 30% 15%;
+
+    --popover: 250 25% 98%;
+    --popover-foreground: 250 30% 15%;
+
+    /* Purple primary */
+    --primary: 262 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Muted purple secondary */
+    --secondary: 250 20% 90%;
+    --secondary-foreground: 250 25% 25%;
+
+    /* Soft muted tones */
+    --muted: 250 15% 90%;
+    --muted-foreground: 250 15% 45%;
+
+    /* Light purple accent */
+    --accent: 262 40% 92%;
+    --accent-foreground: 262 60% 35%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 88%;
+    --input: 250 20% 88%;
+    --ring: 262 80% 55%;
+
+    --radius: 0.75rem;
+
+    /* Journal-specific colors */
+    --journal-feel: 340 70% 55%;
+    --journal-achieve: 45 80% 50%;
+    --journal-learn: 45 70% 50%;
+    --journal-grateful: 200 70% 55%;
+    --journal-challenge: 340 70% 50%;
+    --journal-funny: 50 80% 55%;
+    --journal-notes: 262 60% 55%;
+
+    --sidebar-background: 250 20% 94%;
+    --sidebar-foreground: 250 30% 20%;
+    --sidebar-primary: 262 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 20% 88%;
+    --sidebar-accent-foreground: 250 30% 20%;
+    --sidebar-border: 250 20% 85%;
+    --sidebar-ring: 262 80% 55%;
+  }
+
+  .dark {
+    /* Deep dark purple/navy */
+    --background: 250 30% 8%;
+    --foreground: 250 15% 92%;
+
+    --card: 250 25% 12%;
+    --card-foreground: 250 15% 92%;
+
+    --popover: 250 25% 12%;
+    --popover-foreground: 250 15% 92%;
+
+    /* Vibrant purple primary */
+    --primary: 262 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Dark purple secondary */
+    --secondary: 250 25% 18%;
+    --secondary-foreground: 250 15% 85%;
+
+    /* Dark muted tones */
+    --muted: 250 25% 16%;
+    --muted-foreground: 250 15% 55%;
+
+    /* Purple accent */
+    --accent: 262 40% 20%;
+    --accent-foreground: 262 60% 80%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 25% 18%;
+    --input: 250 25% 18%;
+    --ring: 262 80% 60%;
+
+    /* Journal-specific colors (dark mode) */
+    --journal-feel: 340 70% 55%;
+    --journal-achieve: 45 80% 55%;
+    --journal-learn: 45 70% 55%;
+    --journal-grateful: 200 70% 55%;
+    --journal-challenge: 340 70% 50%;
+    --journal-funny: 50 80% 55%;
+    --journal-notes: 262 60% 60%;
+
+    --sidebar-background: 250 25% 10%;
+    --sidebar-foreground: 250 15% 90%;
+    --sidebar-primary: 262 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 25% 16%;
+    --sidebar-accent-foreground: 250 15% 90%;
+    --sidebar-border: 250 25% 16%;
+    --sidebar-ring: 262 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .journal-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.15) 0%,
+      hsl(var(--background)) 50%,
+      hsl(var(--accent) / 0.2) 100%
+    );
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Landing page animated orbs */
+.landing-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+}
+
+.landing-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: hsl(var(--primary) / 0.3);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.landing-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: hsl(var(--accent) / 0.4);
+  bottom: 20%;
+  left: -50px;
+  animation-delay: -7s;
+}
+
+.landing-orb-3 {
+  width: 250px;
+  height: 250px;
+  background: hsl(var(--primary) / 0.25);
+  bottom: -50px;
+  right: 20%;
+  animation-delay: -14s;
+}
+
+/* Mobile-optimized orbs - smaller and subtler */
+.landing-orb-mobile {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.45;
+  animation: float-mobile 15s ease-in-out infinite;
+}
+
+.landing-orb-mobile-1 {
+  width: 180px;
+  height: 180px;
+  background: hsl(var(--primary) / 0.35);
+  top: -50px;
+  left: -30px;
+  animation-delay: 0s;
+}
+
+.landing-orb-mobile-2 {
+  width: 140px;
+  height: 140px;
+  background: hsl(var(--accent) / 0.4);
+  top: 10px;
+  right: -25px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-10px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.02);
+  }
+}
+
+@keyframes float-mobile {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(12px, -12px) scale(1.03);
+  }
+  66% {
+    transform: translate(-8px, 8px) scale(0.97);
+  }
+}

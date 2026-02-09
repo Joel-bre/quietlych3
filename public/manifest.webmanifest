@@ -1,0 +1,53 @@
+{
+  "name": "Quietly - Daily Journal",
+  "short_name": "Quietly",
+  "description": "A private daily journaling app for structured reflection, gratitude practice, and personal growth with AI-powered insights.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EDE9F3",
+  "theme_color": "#7C3AED",
+  "orientation": "portrait-primary",
+  "id": "/",
+  "scope": "/",
+  "categories": ["lifestyle", "health", "productivity"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/journal-entry.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Daily journal entry with structured reflection prompts"
+    },
+    {
+      "src": "/screenshots/mood-drivers.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mood tracking and emotional drivers"
+    },
+    {
+      "src": "/screenshots/ai-insights.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "AI-powered journal analysis and insights"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

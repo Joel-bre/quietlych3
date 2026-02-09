@@ -15,12 +15,14 @@ jobs:
       run: |
         npm install
         npm run build
-    
+        # Verify the build output
+        ls -R dist
+
     - name: 📂 Sync files to Swizzonic
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /
+        server-dir: ./
         local-dir: ./dist/public/
